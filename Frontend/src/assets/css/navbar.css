@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: black;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+}
+
+.logo {
+    width: 200px;
+    position: absolute;
+    left: 0;
+    margin-left: 20px;
+    font-size: 30px;
+    color: aliceblue;
+}
+
+.list-navbar{
+    justify-content: end;
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+}
+
+.list-navbar li {
+    list-style: none;
+    margin-left: 25px;
+}
+
+.list-navbar li a {
+    color: #fff;
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.carrito {
+    justify-content: end;
+    cursor: pointer;
+}
+
+.carrito img{
+    width: 60px;
+}
+
+/* icono menu */
+
+.navbar-toggle-icon {
+    display: none;
+    cursor: pointer;
+}
+
+#navbar-toggle {
+    display: none;
+}
+
+/* Munu desplegable categorias */
+
+.list-navbar li ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    min-width: 140px;
+    background-color: #fff;
+    border-radius: 0px 0px 16px 16px;
+}
+
+.navbar li ul a {
+    font-size: 18px;
+    color: black;
+    margin-right: 10px;
+   
+}
+
+.list-navbar li:hover > ul {
+    display: block;
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+    .list-navbar {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 80px;
+      right: 0;
+      bottom: 0;
+      width: 60%;
+      background-color: #000000;
+      box-shadow: 0 0 0 100vh rgba(0,0,0,0.5);
+    }
+
+    .list-navbar{
+        margin-right: 0px;
+        text-align: start;
+    }
+
+    .list-navbar a {
+        font-size: 30px;
+        padding: 10px;
+        font-size: 15px;
+        display: block;
+    }
+
+    /* iconos menu */
+    .navbar-toggle-icon {
+        display: block;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 25px;
+        right: 20px;
+    }
+
+    .navbar-toggle-icon img{
+        width: 30px;
+        height: 30px;
+        filter: invert(1);
+    }
+
+    .carrito {
+        position: absolute;
+        top: 25;
+        right: 65px;
+    }
+
+    /* Menu responsive */
+    #navbar-toggle:checked ~ .list-navbar {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    /* Menu desplegable */
+    .list-navbar li ul {
+        display: block;
+        flex-direction: column;
+        position: relative;
+        background-color: #000000;
+        color: #fff;
+        text-align: start;
+    }
+
+    .list-navbar li ul li{
+        padding: 0px 20px 0px 10px;
+    }
+
+    .list-navbar li ul a {
+        color: #ffffffab;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+
+    .list-navbar {
+        top: 60px;
+      }
+
+    .navbar {
+        height: 60px;
+    }
+    .logo {
+        width: 120px;
+    }
+
+    .carrito img {
+        width: 50px;
+    }
+
+    .navbar-toggle-icon {
+        display: block;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 17px;
+        right: 15px;
+    }
+
+    .navbar-toggle-icon img{
+        width: 25px;
+        height: 25px;
+        filter: invert(1);
+    }
+}
