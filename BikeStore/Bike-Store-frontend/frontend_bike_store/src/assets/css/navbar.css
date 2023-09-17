@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.headerNavbar {
+    height: 80px;
+}
+
+.navbar {
+    background-color: black;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+.navbar img:hover {
+    transform: scale(1.03);
+}
+
+.HomeNavbar {
+    margin-top: 0;
+    position: absolute;
+    left: 0;
+}
+
+.logo-navbar {
+    width: 250px;
+    height: 80px;
+    object-fit: contain;
+}
+
+
+.logo-navbar img{
+    margin: 0;
+    margin-left: 20px;
+    font-size: 30px;
+    color: aliceblue;
+}
+
+.list-navbar{
+    justify-content: end;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-right: 20px;
+}
+
+.list-navbar li {
+    list-style: none;
+    margin-left: 25px;
+}
+
+.list-navbar li a {
+    color: #fff;
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.carritoImg {
+    justify-content: end;
+    cursor: pointer;
+}
+
+.carritoImg img{
+    margin-top: 0;
+    width: 60px;
+}
+
+/* icono menu */
+
+.navbar-toggle-icon {
+    display: none;
+    cursor: pointer;
+}
+
+#navbar-toggle {
+    display: none;
+}
+
+/* Munu desplegable categorias */
+
+.list-navbar li ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    min-width: auto;
+    padding: 5px 10px 10px 10px;
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    gap: 5px;
+}
+
+.list-navbar li ul li {
+    margin-left: 0;
+}
+
+.navbar li ul a {
+    font-size: 16px;
+    color: rgb(221, 221, 221);
+}
+
+.list-navbar li:hover > ul {
+    display: flex;
+}
+
+.list-navbar li:hover {
+    transform: scale(1.05);
+    color: rgb(255, 255, 255);
+}
+
+/* --------- loggin --------- */
+.user {
+    color: #fff;
+}
+
+.userLogin {
+    width: 40px;
+    filter: invert(1);
+    cursor: pointer;
+}
+.loggout {
+    cursor: pointer;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+
+    .list-navbar {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 80px;
+      right: 0;
+      bottom: 0;
+      width: 60%;
+      background-color: #000000;
+      box-shadow: 0 0 0 100vh rgba(0,0,0,0.5);
+    }
+
+    .list-navbar{
+        margin-right: 0px;
+        text-align: start;
+    }
+
+    .list-navbar a {
+        font-size: 30px;
+        padding: 10px;
+        font-size: 15px;
+        display: block;
+        background-color: #000000;
+    }
+
+    /* iconos menu */
+    .navbar-toggle-icon {
+        display: block;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 25px;
+        right: 20px;
+    }
+
+    .navbar-toggle-icon img{
+        margin-top: 0;
+        width: 30px;
+        height: 30px;
+        filter: invert(1);
+    }
+
+    .carritoImg {
+        position: absolute;
+        top: 25;
+        right: 65px;
+    }
+
+    /* Menu responsive */
+    #navbar-toggle:checked ~ .list-navbar {
+        display: block;
+        justify-content: flex-start;
+    }
+
+    /* Menu desplegable */
+    .list-navbar li ul {
+        display: block;
+        flex-direction: column;
+        position: relative;
+        background-color: #000000;
+        color: #fff;
+        text-align: start;
+    }
+
+    .list-navbar li ul li{
+        padding: 0px 20px 0px 10px;
+    }
+
+    .list-navbar li ul a {
+        color: #ffffffab;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .logo-navbar {
+        width: 175px;
+        height: 60px;
+    }
+
+    .list-navbar {
+        top: 60px;
+      }
+
+    .navbar {
+        height: 60px;
+    }
+
+    .headerNavbar {
+        height: 60px;
+    }
+
+    .logo {
+        width: 120px;
+    }
+
+    .carritoImg img {
+        width: 50px;
+    }
+
+    .navbar-toggle-icon {
+        display: block;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 17px;
+        right: 15px;
+    }
+
+    .navbar-toggle-icon img{
+        margin-top: 0;
+        width: 25px;
+        height: 25px;
+        filter: invert(1);
+    }
+}

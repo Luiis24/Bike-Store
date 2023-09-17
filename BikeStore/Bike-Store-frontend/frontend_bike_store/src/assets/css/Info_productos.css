@@ -1,0 +1,181 @@
+body {
+    background-color: rgba(0,0,0,0.03);
+}
+
+.buscar{
+    width: 10%;
+    height: 8px;
+    border-radius: 26px;
+    font-size: 20px;
+    padding: 15px;
+    background-color: rgba(241, 241, 241, 0.815);
+    border-color: rgba(32, 32, 32, 0.678);
+    margin-top: 25px;
+}
+.buscar:hover{
+    height: 8px;
+    border-radius: 26px;
+    font-size: 20px;
+    padding: 15px;
+    background-color: rgba(221, 221, 221, 0.966);
+    border-color: rgba(32, 32, 32, 0.678);
+    margin-top: 25px;
+    
+}
+.buscar:focus{
+    width: 40%;
+    height: 8px;
+    border-radius: 26px;
+    font-size: 20px;
+    padding: 15px;
+    background-color: rgba(221, 221, 221, 0.966);
+    border-color: rgba(32, 32, 32, 0.678);
+    margin-top: 25px;
+
+}
+.busqueda{
+    display: flex;
+    justify-content: center;
+}
+
+
+.sectionCards {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.tarjetas-bicicletas{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 50px;
+    justify-items: center;
+    margin-top: 50px;
+}
+
+.tarjeta{
+    width: 290px;
+    height: 380px;
+    border-radius: 15px;
+    border-color: black;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    box-shadow: 5px 5px 5px 4px rgba(207, 207, 207, 0.842);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    user-select: none;
+}
+
+.tarjeta:hover{
+    transform: scale(1.02);
+    box-shadow: 0 8px 50px #23232333;
+}
+
+.tarjetas-bicicletas a {
+    text-decoration: none;
+}
+
+.bici-foto{
+    width: 270px;
+    height: 190px;
+    object-fit: contain;
+}
+
+.nombre-bici{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 10px;
+    color: #000;
+    text-align: center;
+}
+.marca-bici{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    margin-left: 10px;
+    color: #000;
+    text-align: center;
+}
+.precio-bici{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 22px;
+    color: rgb(87, 145, 0);
+    margin-top: 15px;
+    text-align: center;
+}
+
+.agregarCarritoIP {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    transform: translateY(80%);
+    opacity: 0;
+    transition: transform .4s ease, opacity .2s ease;
+}
+
+.btn-carritoIP {
+    height: 30px;
+    width: 85%;
+    border-radius: 16px;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-carritoIP:hover {
+    background-color: #FEE934;
+    color: #000;
+}
+
+.tarjeta:hover .agregarCarritoIP {
+    transform: translateY(-7%);
+    opacity: 1;
+   }
+
+@media screen and (max-width: 280px) {
+
+
+    .tarjeta {
+        width: 200px;
+    }
+
+    .bici-foto {
+        width: 190px;
+        height: 130px;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .sectionCards {
+        display: flex;
+        justify-content: center;
+    }
+
+    .tarjetas-bicicletas {
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 798px) and (min-width: 600px){
+    .sectionCards {
+        display: flex;
+        justify-content: center;
+    }
+
+    .tarjetas-bicicletas {
+        grid-template-columns: repeat(2, minmax(250px, 1fr));
+    }
+
+    .tarjeta {
+        width: 250px;
+    }
+
+    .bici-foto {
+        width: 240px;
+        height: 170px;
+    }
+}

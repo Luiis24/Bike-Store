@@ -1,0 +1,265 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+.producto-no{
+    display: flex;
+    justify-content: center;
+    margin: 10%;
+}
+
+/* -------------BikeStore logo------------------ */
+
+.logoNegro {
+    display: flex;
+    justify-content: center;
+}
+
+.logoNegro img {
+    width: 350px;
+    cursor: pointer;
+}
+
+/* -------------Informacion Bicicleta------------------ */
+
+.sectionBicicleta{
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 1fr 0.7fr;
+}
+
+.imgBicicletas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.imgBicicletas .imgGrande {
+    width: 70%;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+}
+
+.imgB {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+.imgB img{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-left: 10px;
+    border: 4px solid rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+.sectionInfo {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 20px;
+}
+
+.sectionInfo h2 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.sectionInfo p {
+    font-size: 22px;
+    color: #387B28;
+    margin-bottom: 15px;
+}
+
+.descripcionIB {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    margin-bottom: 10px;
+}
+
+.descripcionIB h4{
+    font-size: 22px;
+    margin-right: 10px;
+}
+
+.descripcionIB p{
+    font-size: 20px;
+    color: #505050;
+}
+
+.sectionInfo button {
+    width: 300px;
+    height: 50px;
+    border-radius: 16px;
+    margin-bottom: 15px;
+    font-size: 25px;
+    font-weight: bold;
+    border-style: none;
+    cursor: pointer;
+}
+
+.btn-comprar {
+    background-color: #387B28;
+    color: #fff;
+}
+
+.btn-carrito {
+    background-color: #FEE934;
+    color: black;
+}
+
+.btn-infoBicicleta {
+    display: flex;
+    flex-direction: column;
+}
+
+/* -------------- contador ---------------- */
+
+.contadorCar {
+    position: relative;
+    top: 10px;
+    right: 10px;
+    color: #ff0000;
+    font-size: 20px;
+}
+
+.informacionBicicleta {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.descripcionText {
+    width: 70%;
+    text-align: center;
+}
+
+.descripcionText p {
+    font-size: 20px;
+}
+
+@media screen and (max-width: 300px) {
+    .sectionInfo button {
+        width: 250px;
+    }
+
+    .logo-navbar {
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .sectionBicicleta {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logoNegro {
+        display: none;
+    }
+
+    .imgB {
+        display: none;
+    }
+
+    .imgBicicletas .imgGrande {
+        width: 80%;
+    }
+
+    .sectionInfo {
+        margin-top: 20px;
+        align-items: center;
+        margin-left: 0;
+    }
+
+    .sectionInfo h2 {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .sectionInfo p {
+        font-size: 18px;
+    }
+
+    .sectionInfo button {
+        font-size: 20px;
+        height: 40px;
+    }
+
+    .contadorCar {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1300px) and (min-width: 1024px){
+    
+
+    .sectionBicicleta {
+        grid-template-columns: 1.2fr 1fr;
+    }
+
+    .imgBicicletas .imgGrande {
+        width: 500px;
+    }
+
+    .imgB img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .sectionInfo button {
+        font-size: 22px;
+    }
+
+    .sectionInfo h2 {
+        font-size: 23px;
+    }
+
+    .contadorCar {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 768px){
+
+    .imgBicicletas .imgGrande {
+        width: 70%;
+    }
+
+    .imgB img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .sectionInfo button {
+        font-size: 18px;
+    }
+
+    .sectionInfo h2 {
+        font-size: 16px;
+    }
+    .contadorCar {
+        display: none;
+    }
+}

@@ -1,0 +1,43 @@
+.btn-orden-letra{
+    margin-top: 5px;
+    margin-bottom: -8px;
+    border-style: none;
+    background-color: #d9d9d9;
+    height: 30px;
+    width: 75px;
+    border-radius: 10px;
+    margin-left: 15px;
+    cursor: pointer;
+    color: #2e2e2e;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.btn-orden-letra:hover{
+    background-color: rgb(231, 231, 231);
+}
+.btn-orden-letra:active{
+    background-color: rgb(238, 238, 238);
+}
+
+
+@media screen and (max-width: 280px) {
+    .btn-ordenar-nombre {
+       display: flex;
+       justify-content: center;
+    }
+
+}
+
+@media screen and (max-width: 580px) {
+    .btn-ordenar-nombre {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 798px) and (min-width: 600px){
+    .btn-ordenar-nombre {
+        display: flex;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.sectionPreguntas {
+    margin-top: 40px;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.sectionPreguntas h2 {
+    font-size: 40px;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.sectionPreguntas textarea {
+    height: 150px;
+    padding: 20px;
+    font-size: 30px;
+    border: 5px solid rgba(0, 0,0,0.2);
+    border-radius: 16px;
+    color: black;
+}
+
+.imagenN {
+    display: flex;
+    justify-content: center;
+}
+
+.calificaciones {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    width: 50%;
+}
+
+.sectionAC {
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+}
+
+.sectionAC p {
+    font-size: 20px;
+}
+
+.sectionEstrellas {
+    margin-left: 15px;
+}
+
+.estrellas {
+    display: flex;
+    flex-direction: row;
+}
+
+.estrellas li {
+    list-style: none;
+}
+
+.progress li{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 20px;
+}
+
+.progress li p{
+    margin-left: 10px;
+}
+
+.comentarios {
+    width: 50%;
+}
+
+.comentario {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #000;
+    width: 80%;
+}
+
+.comentario img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.comentario p {
+    font-size: 22px;
+}
+
+.comentarioText {
+    margin: 22px;
+}
+
+.reseñas {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+@media screen and (max-width: 768px) {
+    .reseñas {
+        flex-direction: column;
+    }
+
+    .comentarios {
+        margin-top: 30px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

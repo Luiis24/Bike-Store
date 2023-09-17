@@ -1,0 +1,208 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.Container{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.formularioCarrito {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.p5{
+    margin-top: 30px;
+    color: rgba(0, 0, 0, 0.663);
+}
+.formularioCarrito p{
+    margin-top: 20px;
+}
+.btnn{
+    text-align: center;
+}
+.btnComprar{
+    width: 190px;
+    height: 30px;
+    display: flex;
+    color: #ffff;
+    cursor: pointer;
+    margin-top: 15px;
+    border-radius: 11px;
+    border-style: none;
+    align-items: center;
+    justify-content: center;
+    background-color: #387B28;
+}
+.btnComprar:hover{
+    background-color: #4d9d39;
+}
+.btnComprar:active{
+    background-color: #387B28;
+}
+.formularioCarrito input{
+    width: 350px;
+    height: 30px;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 11px;
+    border-color: rgba(0, 0, 0, 0.238);
+} 
+.sectionInput{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#input-4{
+    width: 350px;
+    padding: 6px;
+    height: 120px;
+    margin-top: 10px;
+    border-radius: 11px;
+    border:2px solid rgba(0, 0, 0, 0.238);
+}
+.input-2{
+    margin-left: 5%;
+    border-radius: 11px;
+}
+
+/* @media(max-width:1024px){
+    .btn{
+        margin-top: 50vh;
+    }
+}*/
+@media(max-width:912px){
+    .formularioCarrito {
+        flex-direction: column;
+        align-items: center;
+    }  
+
+    .sectionInput {
+        width: auto;
+        margin-left: 0;
+    }
+
+    .input-2{
+        width: auto;
+        margin-left: 0;
+    }
+}
+
+@media (max-width:768px){
+    .formularioCarrito {
+        flex-direction: column;
+    }  
+} 
+ @media(max-width:540px){
+    .formularioCarrito input {
+        width: 250px;
+    }
+
+    #input-4{
+        width: 250px;
+    }
+}
+
+/*
+@media(max-width:450px){
+    .btn{
+        margin-top:70vh;
+        text-align: center;
+    }
+    input{
+        width: 300px;
+        margin-top: 10px;
+    }
+    .input{
+        width: 250px;
+        margin-top: -90px;
+        margin-left: -80px;
+    }
+    .input-2{
+        position: absolute;
+        left: 3.5vh;
+        top: 37vh;
+    }
+    #input-4{
+        width: 300px;
+    }
+    .formularioCarrito p{
+        margin-top: 10px;
+    }
+}
+@media(max-width:414px){
+    .input-2 {
+        margin-top: -45px;
+        margin-left: 10px;
+    }
+    .btn {
+        margin-top: 60vh;
+        text-align: center;
+    }
+    .input {
+        margin-left: -70px;
+    }
+}
+@media(max-width:412px){
+    .input {
+        margin-left: -70px;
+    }
+    .input-2{
+        margin-left: 10px;
+    }
+}
+@media(max-width:390px){
+    .input-2 {
+        margin-top: -33px;
+    }
+}
+@media(max-width:375px){
+    .input-2 {
+        margin-top: -5px;
+        margin-left: 1px
+    }
+    .btn {
+        margin-top: 70vh;
+        text-align: center;
+    }
+    .input {
+        margin-left: -80px;
+    }
+}
+@media(max-width:360px){
+    .input-2 {
+        margin-top: -15px;
+        margin-left: -7px;
+    }
+    .input{
+        margin-left: -80px;
+    }
+}
+@media(max-width:280px){
+    input {
+        width: 280px;
+    }
+    #input-4 {
+        width: 280px;
+    }
+    .input {
+        margin-left: -65px;
+    }
+    .input-2 {
+        margin-left: -15px;
+    }
+    .btn {
+        margin-left: 50px;
+    }
+} */
