@@ -1,0 +1,109 @@
+footer {
+    text-align: center;
+    background-color: black;
+    height: auto;
+    padding: 20px 0;
+    display: flex;
+    margin-top: 10px auto;
+    width: 100%;
+    position: relative;
+    bottom: 0;  
+    flex-direction: column;
+    z-index: -1;
+}
+
+.containerFooter{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: 1px solid #ffff;
+}
+
+.redesFooter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+#logo {
+    justify-content: flex-start;
+}
+
+.red {
+    display: flex;
+    align-items: center;
+}
+
+.redImg{
+    width: 75px;
+    margin-right: 10px;
+}
+
+.gmail {
+    margin-left: 5px;
+    width: 50px;
+    margin-right: 10px;
+}
+.redesFooter .text {
+    color: #fff;
+    font-family: math;
+    text-decoration: none;
+    margin-right: 10px;
+}
+.copy{
+    width: 25px;
+    filter: invert(1);
+    margin-right: 5px;
+}
+
+.copyRight {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.copyRight a {
+    color: #fff;
+    font-family: math; 
+    text-decoration: none;
+}
+
+@media screen and (max-width: 1300px) {
+    .redesFooter .text {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .containerFooter {
+        flex-direction: column;
+    }
+
+    .redImg {
+        width: 60px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    #Logo img {
+        width: 300px;
+    }
+
+    .redImg {
+        width: 40px;
+    }
+
+    .gmail {
+        width: 30px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    #Logo img {
+        width: 250px;
+    }
+}

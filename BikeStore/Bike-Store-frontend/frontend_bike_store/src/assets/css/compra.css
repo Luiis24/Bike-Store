@@ -1,0 +1,30 @@
+.checkCompra {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.checkCompra img {
+    width: 500px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0 0 0 100vh rgba(0,0,0,0.5);
+}
+
+.checkCompra h2 {
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+}
+
+@media screen and (max-width: 660px) {
+    .checkCompra img {
+        width: 300px;
+    }
+}

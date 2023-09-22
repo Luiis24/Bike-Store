@@ -1,0 +1,58 @@
+
+.containerVentas {
+    margin-top: 50px;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.venta {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 50px;
+    width: 100%;
+    border: 1px solid #434343;
+    border-radius: 16px;
+}
+
+.ventaInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.producto {
+    text-decoration: none;
+    color: blueviolet;
+}
+
+.precioVenta {
+    color: rgb(87, 145, 0);
+}
+
+.productosVentas {
+    display: flex;
+    flex-direction: column;
+}
+
+.cantidadVentas {
+    display: flex;
+}
+
+@media screen and (max-width: 900px) {
+    .containerVentas {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .venta {
+        flex-direction: column;
+        padding: 15px;
+        gap: 10px;
+    }
+}

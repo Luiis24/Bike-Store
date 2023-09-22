@@ -1,0 +1,31 @@
+.paginador_componente{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    user-select: none;
+    font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+.siguiente{
+    background-color: #d9d9d9;
+    height: 30px;
+    width: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+    cursor: pointer;
+    color: #2e2e2e;
+}
+.siguiente:hover{
+    background-color: rgb(231, 231, 231);
+}
+.siguiente:active{
+    background-color: rgb(238, 238, 238);
+}
+.contador{
+    color: #000000c5;
+}

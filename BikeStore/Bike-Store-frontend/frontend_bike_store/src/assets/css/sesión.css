@@ -1,0 +1,193 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.sesion{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-image: url(../img/59331.png);
+    background-repeat: no-repeat;
+}
+.inicioSesion{
+    height: 530px;
+    width: 450px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.626);
+    font-size: 28px;
+    text-align: center;
+}
+.logoi img{
+    width: 210px;
+    height: 55px;
+}
+.formu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.sesion h1{
+    font-size: 28px;
+    margin-top: 20px;
+}
+.sesion input{
+    width: 300px;
+    height: 25px;
+    margin-top: 15px;
+    padding: 3px 6px;
+    font-weight: bold;
+    border-style: none;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+.sesion p{
+    font-size: 15px;
+    margin-right: 100px;
+    margin-top: 5px;
+}
+.sesion p a{
+    margin-right: -115px;
+}
+.a1{
+    display: none;
+}
+#llevar-inicio{
+    color: black;
+    font-size: 15px;
+}
+.btn{
+    color: #ffff;
+    display: block;
+    margin: auto;
+    width: 200px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 17px;
+    margin-top: 30px;
+    border-style: none;
+    border-radius: 10px;
+    background-color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.btn:hover{
+    background-color:dimgray;
+}
+.btn:active{
+    background-color: black;
+}
+.bnt-facebook{
+    width: 250px;
+    height: 32px;
+    color: #ffff;
+    margin-top: 40px;
+    padding: 10px 20px;
+    border-style: none;
+    position: relative;
+    border-radius: 15px;
+    display: inline-block;
+    background-color: #2992FB;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.bnt-facebook:hover{
+    background-color: #4d679f ;
+}
+.bnt-facebook:active{
+    background-color: #2992FB;
+}
+.logo-facebook {
+    position: absolute;
+    top: -45%;
+    left: 10px;
+    width: 20px;
+}
+.text-facebook{
+    display: inline-block;
+}
+.btn-google{
+    border-style: none;
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    height: 32px;
+    width: 250px;
+    border-radius: 15px;
+    margin-top: 8px;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.logo-google{
+    position: absolute;
+    top: -40%;
+    left: 10px;
+    width: 18px;
+}
+.text-google{
+    display: inline-block;
+}
+.btn-google:hover{
+    background-color:rgb(219, 218, 218);
+}
+.btn-google:active{
+    background-color: #ffff;
+}
+.sesion img{
+    margin-top: 20px;
+}
+@media(max-width:1280px) {
+    .inicio{
+       margin-top: 20%;
+    } 
+}
+@media(max-width:1024px) {
+    .inicio{
+       margin-top: 8%;
+    } 
+}
+@media(max-width:450px) {
+    .inicio{
+        width: 300px;
+        height: 500px;
+        margin-top: 30%;
+        margin-right: -5px;
+    }
+    .sesion input{
+        width: 250px;
+        margin-top: 20px;
+    }
+    .a1{
+        display: block;
+        color: black;
+        margin-right: 25px;
+        font-size: 12px;
+        text-align: end;
+        margin-top: 5px;
+    }
+    .sesion p{
+        display: none;
+    }
+    .input-repetir-contraseña{
+        display: none;
+    }
+    #llevar-inicio{
+        display: none;
+    }
+    .logoi img{
+        width: 250px;
+        height: auto;
+    }
+    div .centar.inicio{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .btn{
+        font-size: 15px;
+        margin-top: 20px;
+        width: 190px;
+    } 
+}
