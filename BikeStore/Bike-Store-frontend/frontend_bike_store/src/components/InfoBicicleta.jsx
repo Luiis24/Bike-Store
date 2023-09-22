@@ -40,7 +40,7 @@ export const InfoBicicleta = () => {
           <div className="sectionBicicleta">
             <div className="imgBicicletas">
               <ReactImageZoom
-                className={`imgBicicletas ${
+                className={`imgBicicletaZoom ${
                   window.innerWidth <= 768 ? "disable-zoom" : ""
                 }`}
                 {...{
@@ -51,8 +51,9 @@ export const InfoBicicleta = () => {
                   zoomPosition: "original",
                 }}
               />
-           
+           <img className="imgGrande" src={`../../${product.imagen}`}></img>
             </div>
+            
             <div className="sectionInfo">
               <h2>{product.nombre}</h2>
               <p>${precio(product.precio)}</p>

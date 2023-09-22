@@ -12,9 +12,6 @@ export const Carrito = () => {
   const { user } = useAuth();
   const { cart, addCart, removeCart, carritoInfo, cantidadProductos, subtractCart } = useCarritoContext()
   const total = carritoInfo + 50000;
-  console.log(cart)
-
-  
   
   return (
     <div>
@@ -46,20 +43,11 @@ export const Carrito = () => {
                         <h4>{product.cantidad}</h4>
                         <button onClick={() => addCart(product)}>+</button>
                     </div>
-    
-    
-    
                 </div>
                 <div className="basuraContainer"><button className='basuraResponsive' onClick={() => removeCart(product)}><img src={basura} /></button></div>
     
               </div>
              </div>
-
-            // <Car key={product.idproductos}
-            //   addCart={() => addCart(product)}
-            //   removeCart={() => removeCart(product)}
-            //   subtractCart={() => subtractCart(product)}
-            //   {...product} />
 
           )) : <div className='carrito-vacio'>Carrito Vacio</div>}
           </div>

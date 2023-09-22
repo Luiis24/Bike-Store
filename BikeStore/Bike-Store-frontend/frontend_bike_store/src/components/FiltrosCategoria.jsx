@@ -25,6 +25,13 @@ export const FiltrosCategoria = () => {
                     marca: event.target.value
                 }))
             }
+
+            const handleTallas = (event) => {
+                setFilters(prevState => ({
+                    ...prevState,
+                    talla: event.target.value
+                }))
+            }
         
             const {filters, setFilters} = useFilters();
 
@@ -56,6 +63,18 @@ export const FiltrosCategoria = () => {
                     <option value="Trek">Trek</option>
                     <option value="Giant">Giant</option>
                     <option value="GW">GW</option>
+                </select>
+                </div>
+
+                <div className="categoriaTipo">
+                <label htmlFor='talla'>Talla</label>
+                <select id='talla' onChange={handleTallas}>
+                    <option value="all">Todos</option>
+                    <option value="XS">XS</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
                 </select>
                 </div>
             </div>

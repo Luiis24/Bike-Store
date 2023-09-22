@@ -22,7 +22,7 @@ export const Navbar = () => {
             <input type="checkbox" id="navbar-toggle"></input>
             <label htmlFor="navbar-toggle" className="navbar-toggle-icon"><img src={toggle}></img></label>
 
-            <Link className="carritoImg" to='/carrito'><img src={carrito}></img></Link>
+            {admin ? '' : <Link className="carritoImg" to='/carrito'><img src={carrito}></img></Link>}
             
             <ul className="list-navbar">
                 <li className="Categorias"><a href="/categorias">Categorias</a>
@@ -40,7 +40,7 @@ export const Navbar = () => {
             </ul>
         </div>
     </header>
-    <p className='cantidadProductos'>{cantidadProductos}</p>
+    { admin ? '' : <p className='cantidadProductos'>{cantidadProductos}</p>}
 	</>
   )
 }

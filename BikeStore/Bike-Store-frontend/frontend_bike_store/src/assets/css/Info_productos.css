@@ -43,6 +43,7 @@ body {
     width: 80%;
     margin-left: 10%;
     margin-right: 10%;
+    flex-direction: column;
 }
 
 .tarjetas-bicicletas{
@@ -149,6 +150,10 @@ body {
 }
 
 @media screen and (max-width: 580px) {
+    .buscar {
+        width: 30%;
+    }
+    
     .sectionCards {
         display: flex;
         justify-content: center;

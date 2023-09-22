@@ -26,13 +26,14 @@ export const Categorias = () => {
         (filters.categoria === 'all' || 
         product.tipo === filters.categoria) &&
         (filters.marca === 'all' ||
-        product.marca === filters.marca)
+        product.marca === filters.marca) &&
+        (filters.talla === 'all' ||
+        product.talla === filters.talla)
         )
     })
   }
 
   const filteredProducts = filterProducts(products);
-  console.log(filteredProducts)
 
   return (
     <div>
@@ -40,7 +41,7 @@ export const Categorias = () => {
         <FiltrosCategoria></FiltrosCategoria>
       <div className='tarjetas-bicicletas'>
 
-        {filteredProducts.map((product) => (
+        {filteredProducts[0] ? filteredProducts.map((product) => (
          
          <div key={product.idproducto} className='tarjeta'>
           <Link to={`/detalles/${product.idproducto}`}>
@@ -54,7 +55,7 @@ export const Categorias = () => {
                </div>
          </div>
        
-        ))}
+        )) : <div>No hay productos con esta categoria</div>}
     </div>
     </div>
     </div>

@@ -23,7 +23,6 @@ const router = createBrowserRouter ([
     <Buscador/>
     <Filtros></Filtros>
     <Info_productos/>
-    <Paginador/>
     <Footer2/>
     </>
   },

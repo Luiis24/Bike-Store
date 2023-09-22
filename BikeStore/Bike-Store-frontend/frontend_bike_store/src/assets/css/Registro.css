@@ -133,22 +133,12 @@
 .registro img{
     margin-top: 20px;
 }
-@media(max-width:1280px) {
-    .inicio{
-       margin-top: 20%;
-    } 
-}
-@media(max-width:1024px) {
-    .inicio{
-       margin-top: 8%;
-    } 
-}
+
+
 @media(max-width:450px) {
     .inicio{
         width: 300px;
         height: 500px;
-        margin-top: 30%;
-        margin-right: -5px;
     }
     .registro input{
         width: 250px;

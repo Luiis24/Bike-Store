@@ -1,32 +1,29 @@
-import React from 'react'
-import '../assets/css/Paginador.css' 
 
-export const Paginador = () => {
+import '../assets/css/Paginador.css'
+export const Paginador = ({ pagina, setPagina, maximo }) => {
+
+  const siguientePagina = () => {
+    if (pagina < maximo) {
+      setPagina(pagina + 1)
+    }
+  }
+
+  const anteriorPagina = () => {
+    if (pagina > 1) {
+      setPagina(pagina - 1)
+    }
+  }
+
   return (
-    <div className='paginador_componente'>
+    <>
+      <div className='paginador_componente'>
 
-        <div className='contador'>1 De 1</div>
-        <div className='siguiente'>➤</div>
-        
+        <button className='btnPaginador' onClick={anteriorPagina}><img className="paginadorAnterior" src="./src/assets/img/flecha.png" alt="" /></button>
+        <div className='contadorPagina' id='contador'>{pagina} De {maximo}</div>
+        <button className='btnPaginador' onClick={siguientePagina}><img src="./src/assets/img/flecha.png" alt="" /></button>
 
+      </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-    
-
-
+    </>
   )
 }

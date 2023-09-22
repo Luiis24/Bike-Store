@@ -11,7 +11,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
 
 .formularioAgregar input{
@@ -38,6 +37,7 @@
 }
 
 .agregarBici {
+    margin: 30px;
     background-color: #fff;
     border-radius: 15px;
     padding: 50px;
@@ -61,4 +61,40 @@ color: black;
 }
 .btnAgregar:hover{
     transform: scale(1.02);
+}
+
+@media only screen and (max-width:800px) {
+    .Formulario-Agregar {
+        width: 400px;
+    }
+}
+
+@media only screen and (max-width:620px) {
+    .Formulario-Agregar {
+        width: 300px;
+    }
+
+    .agregarBici {
+        padding: 20px;
+    }
+}
+
+@media only screen and (max-width:400px) {
+    .Formulario-Agregar {
+        width: 250px;
+    }
+
+    .agregarBici {
+        padding: 10px;
+    }
+}
+
+@media only screen and (max-width:290px) {
+    .Formulario-Agregar{
+        width: 220px;
+    }
+
+    .agregarBici {
+        padding: 0px;
+    }
 }

@@ -3,11 +3,15 @@ import '../assets/css/Info_productos.css';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useCarritoContext } from '../redux/carritoContext';
+import { Paginador } from './Paginador';
 
 // Catalogo :
 
 export const Info_productos = () => {
   const [products, setProducts] = useState([]);
+  const [pagina, setPagina] = useState(1)
+  const [porPagina, setPorPagina] = useState(8)
+
   useEffect(() => {
     axios.get('http://localhost:3000/products')
       .then(datos => {
@@ -17,6 +21,8 @@ export const Info_productos = () => {
         console.error('Error al obtener los datos:', error);
       });
   }, []);
+
+  const maximo = Math.ceil(products.length / porPagina);
 
 // Carrito:
 
@@ -64,7 +70,7 @@ const {addCart} = useCarritoContext()
       <input value={search} onChange={searcher} type='tetx' placeholder='Buscar...' className='buscar'></input>
       </div>
       <div className='tarjetas-bicicletas'>
-  {result.map((product) => (
+  {result.slice((pagina - 1) * porPagina, (pagina - 1) * porPagina + porPagina).map((product) => (
     <>
     
     <div key={product.idproducto} className='tarjeta'>
@@ -86,6 +92,7 @@ const {addCart} = useCarritoContext()
       </>
   ))}
 </div>
+<Paginador pagina={pagina} setPagina={setPagina} maximo={maximo}/>
     </div>
   );
 };

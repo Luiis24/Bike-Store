@@ -3,14 +3,16 @@
     padding: 0;
 }
 
+/* carousel---------------------------------- */
+
 .buscador {
 	width:100%;
 	height:600px;
 	animation:banner 9s infinite linear alternate;
     background-repeat: no-repeat;
-	display:flex; /*para que la caja sea flexible*/
-	justify-content:center;/*para que quede cntrado de manera horizontal*/
-	align-items:center; /*para que quede centrado verticalmante*/
+	display:flex; 
+	justify-content:center;
+	align-items:center;
 }
 
 @keyframes banner {
@@ -34,7 +36,6 @@
 }
 
 
-/* carousel---------------------------------- */
 
 .logoBuscador {
     width: 100%;
@@ -48,26 +49,9 @@
     width: 35%;
 }
 
-.boton {
-    width: 80%;
-    height: 45px;
-    border-radius: 16px;
-    background-color: rgba(255, 255, 255, 0.7);
-    font-size: 20px;
-    padding: 15px;
-    border-style: none;
-}
-
-
 @media only screen and (max-width:400px){
     .logoBuscador img{
         width: 80%;
-    }
-
-    .boton {
-        width: 80%;
-        height: 30px;
-        font-size: 15px;
     }
 
     .buscador {
@@ -75,15 +59,10 @@
     }
 }
 
-@media(max-width:700px){
+@media(max-width:700px) and (min-width: 400px){
 
     .logoBuscador img{
         width: 80%;
-    }
-
-    .boton {
-        width: 80%;
-        font-size: 15px;
     }
 
     .buscador {
@@ -91,14 +70,16 @@
     }
 }
 
-@media(max-width:900px){
+@media(max-width:950px) and (min-width: 700px){
 
     .buscador {
         height: 350px;
     }
+}
 
-    .buscadorNavbar {
-        display: none;
+@media(max-width:1100px) and (min-width: 950px){
+    .buscador {
+        height: 450px;
     }
 }
 

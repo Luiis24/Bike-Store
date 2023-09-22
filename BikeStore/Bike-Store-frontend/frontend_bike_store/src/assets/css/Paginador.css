@@ -7,8 +7,9 @@
     font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
     font-size: 18px;
     margin-bottom: 50px;
+    gap: 10px;
 }
-.siguiente{
+.btnPaginador{
     background-color: #d9d9d9;
     height: 30px;
     width: 40px;
@@ -16,14 +17,22 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 15px;
     cursor: pointer;
     color: #2e2e2e;
+    border: none;
 }
-.siguiente:hover{
+
+.btnPaginador img {
+    width: 15px;
+}
+
+.paginadorAnterior {
+    rotate: 180deg;
+}
+.btnPaginador:hover{
     background-color: rgb(231, 231, 231);
 }
-.siguiente:active{
+.btnPaginador:active{
     background-color: rgb(238, 238, 238);
 }
 .contador{

@@ -42,7 +42,7 @@ export const Registro = () => {
             <input placeholder='Contraseña' type='password' name='password' onChange={(e) => setPassword(e.target.value)} />
 
           </div>
-          <a className='a1' href="#">Ya tienes cuenta?</a>
+          <a className='a1' href="/sesion">Ya tienes cuenta?</a>
           <p>Ya tienes cuenta?<a href="/sesion" id='llevar-inicio'>Iniciar sesión</a></p>
           <button className='btn' type='submit'>
             Registrarse

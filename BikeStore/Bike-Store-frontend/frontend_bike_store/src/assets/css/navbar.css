@@ -75,6 +75,7 @@
 .carritoImg {
     justify-content: end;
     cursor: pointer;
+    margin-right: 5px;
 }
 
 .carritoImg img{
@@ -141,12 +142,12 @@
 
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px){
 
     .list-navbar {
       display: none;
       flex-direction: column;
-      position: absolute;
+      position: fixed;
       top: 80px;
       right: 0;
       bottom: 0;
@@ -186,6 +187,7 @@
     }
 
     .carritoImg {
+        margin-right: 0;
         position: absolute;
         top: 25;
         right: 65px;
@@ -214,6 +216,11 @@
     .list-navbar li ul a {
         color: #ffffffab;
         font-size: 20px;
+    }
+
+    .cantidadProductos {
+        top: 6px;
+        right: 62px;
     }
 }
 

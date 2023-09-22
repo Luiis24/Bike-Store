@@ -7,7 +7,8 @@ export const FiltersProvider = ({ children }) => {
     const [filters, setFilters] = useState({
         categoria: 'all',
         minPrecio: 0,
-        marca: 'all'
+        marca: 'all',
+        talla: 'all'
       })
 
 

@@ -77,7 +77,7 @@ export const Sesión = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <a className='a1' href="#">No tienes cuenta?</a>
+          <a className='a1' href="/registro">No tienes cuenta?</a>
           <p>No tienes cuenta?<a href="/registro" id='llevar-inicio'>Registrate</a></p>
           <button className='btn' type='submit'>
             <span>Iniciar Sesión</span>
