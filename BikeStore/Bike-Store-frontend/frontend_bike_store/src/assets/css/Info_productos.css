@@ -163,6 +163,11 @@ body {
         justify-content: center;
         align-items: center;
     }
+
+    .agregarCarritoIP {
+        transform: translateY(0%);
+        opacity: 1;
+    }
 }
 
 @media screen and (max-width: 798px) and (min-width: 600px){
@@ -182,5 +187,10 @@ body {
     .bici-foto {
         width: 240px;
         height: 170px;
+    }
+
+    .agregarCarritoIP {
+        transform: translateY(0%);
+        opacity: 1;
     }
 }
