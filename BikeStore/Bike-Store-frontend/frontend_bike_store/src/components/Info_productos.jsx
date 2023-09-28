@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useCarritoContext } from '../redux/carritoContext';
 import { Paginador } from './Paginador';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // Catalogo :
 
@@ -59,9 +61,35 @@ const {addCart} = useCarritoContext()
   useEffect ( () => {
    showData()
   }, [])
+
+  const mensajeAgregarProducto = (product) => {
+    if(product.stock < 1){
+      toast.error('Producto agotado', {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        })
+    } else {
+    toast.success('producto Agregado', {
+      position: "top-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      });
+    }
+  }
   
  if (!products) {
-    return <div className='catalogo-vacio'>Catalgo Vacio</div>;
+    return <div className='catalogo-vacio'>Catalogo Vacio</div>;
   }
 
   return (
@@ -83,7 +111,8 @@ const {addCart} = useCarritoContext()
             <div className='agregarCarritoIP'>
               <button
                 className='btn-carritoIP'
-                onClick={() => addCart(product)}
+                onClick={() => {addCart(product);
+                mensajeAgregarProducto(product)}}
               >
                 Añadir Al Carrito
               </button>
@@ -93,6 +122,7 @@ const {addCart} = useCarritoContext()
   ))}
 </div>
 <Paginador pagina={pagina} setPagina={setPagina} maximo={maximo}/>
+<ToastContainer />
     </div>
   );
 };

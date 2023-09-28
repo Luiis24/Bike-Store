@@ -25,8 +25,7 @@ const carritoReducer = (state, action) => {
                 newCart[cartInCarrito].cantidad += 1
                 updateLocaleStorage(newCart)
                 return newCart
-            } else if(cartInCarrito >= 0 && state[cartInCarrito].cantidad >= product.stock){
-                alert('producto agotado')
+            } else if(cartInCarrito >= 0 && state[cartInCarrito].cantidad >= product.stock || product.stock < 1){
                 return state
             } else {
                 const newCart = [...state, { ...product, cantidad: 1}]
@@ -75,9 +74,11 @@ export const CarritoProvider = ({children}) => {
 
     const addCart = (product) => {
         dispatch({type: 'ADD_CART', payload: product})
-        if (!product.cantidad || product.cantidad < product.stock){
-        setCarritoInfo((current) => {return (Number(current) + Number(product.precio))})
-        setCantidad((current) => {return (current += 1)})
+        if (product.stock < 1 || product.stock <= product.cantidad){
+            return
+        } else{
+            setCarritoInfo((current) => {return (Number(current) + Number(product.precio))})
+            setCantidad((current) => {return (current += 1)})
         }
     }
 

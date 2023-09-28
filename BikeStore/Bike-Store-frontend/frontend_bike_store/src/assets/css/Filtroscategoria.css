@@ -22,7 +22,23 @@
     gap: 5px;
 }
 
-@media(max-width:900px){
+.filtros select {
+    width: 120px;
+    font-size: 17px;
+    cursor: pointer;
+    font-family: math;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.filtros option {
+    background-color: rgb(0,0,0);
+    color: #fff;
+    font-size: 17px;
+    cursor: pointer;
+    font-family: math;
+}
+@media(max-width:950px){
     .filtros {
         flex-direction: column;
     }

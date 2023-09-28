@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useCarritoContext } from "../redux/carritoContext";
 import {useAuth} from '../redux/store'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const Formulariocarrito = () => {
   const { cart, cantidadProductos, carritoInfo } = useCarritoContext();
@@ -30,6 +32,19 @@ export const Formulariocarrito = () => {
     enviarFormularioEnvio(values)
   }
 
+  const mensajeFormularioError = () => {
+    toast.error('Error al llenar el formulario', {
+      position: "top-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      });
+  }
+
   const enviarFormularioEnvio = async (values) => {
     try {
       const response = await axios.post('http://localhost:3000/formularioEnvio', values, {
@@ -38,16 +53,15 @@ export const Formulariocarrito = () => {
 
       if(response){
         const productos = cart.map(item => item.idproducto)
-        const date = new Date().toUTCString();
+        const date = new Date().toLocaleDateString();
         const total = carritoInfo;
         const cliente = user.name
         const cantidad = cart.map(item => item.cantidad)
         enviarVenta(productos, date, cantidadProductos, total, cliente, cantidad)
       }
 
-      console.log(response.data); // Muestra la respuesta del servidor
     } catch (error) {
-      console.error('Error al llenar formulario', error);
+      mensajeFormularioError()
     }
   }
 
@@ -72,7 +86,7 @@ export const Formulariocarrito = () => {
       }
     }
     catch(error){
-      alert(error, ' error al comprar')
+      console.log(error, ' error al comprar')
     }
   }
 
@@ -138,6 +152,7 @@ export const Formulariocarrito = () => {
       </div>
       </form>
     </div>
+    <ToastContainer />
     </div>
   );
 };

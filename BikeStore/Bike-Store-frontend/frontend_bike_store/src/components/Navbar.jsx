@@ -25,12 +25,12 @@ export const Navbar = () => {
             {admin ? '' : <Link className="carritoImg" to='/carrito'><img src={carrito}></img></Link>}
             
             <ul className="list-navbar">
-                <li className="Categorias"><a href="/categorias">Categorias</a>
-                </li>
-
+                <li className="Categorias"><a href="/categorias">Categorias</a></li>
+                {user ? <li><a href="/compras" >Compras</a></li> : ''}
                 {admin ? <><li><a href="/Agregar">Agregar</a></li> 
                 <li><a href='/ventas'>Ventas</a></li></>
                 : null}
+
                 <li>{
                             user ? <>
                                        <a><img className="userLogin" src="./src/assets/img/usuarioLoggin.png" /></a>

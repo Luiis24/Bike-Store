@@ -1,6 +1,8 @@
 import '../assets/css/Agregar-Producto.css';
 import axios from 'axios';
 import { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const Agregar = () => {
     const [nombre, setNombre] = useState('');
@@ -12,6 +14,32 @@ export const Agregar = () => {
     const [color, setColor] = useState('');
     const [talla, setTalla] = useState('');
     const [stock, setStock] = useState('');
+
+    const mensajeProductoRegistrado = () => {
+        toast.success('Producto agregado en catalogo', {
+            position: "top-right",
+            autoClose: 1000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            });
+    }
+
+    const mensajeProductoNoRegistrado = () => {
+        toast.error('Error al agregar el producto', {
+            position: "top-right",
+            autoClose: 1000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            });
+    }
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -29,9 +57,11 @@ export const Agregar = () => {
                 stock
             });
 
-            console.log(response.data); // Muestra la respuesta del servidor
+            if (response) {
+                mensajeProductoRegistrado()
+            }
         } catch (error) {
-            console.error('Error al registrar el producto', error);
+            mensajeProductoNoRegistrado()
         }
     };
 
@@ -67,6 +97,7 @@ export const Agregar = () => {
                     </button>
                 </form>
             </div>
+            <ToastContainer />
         </div>
     );
 };

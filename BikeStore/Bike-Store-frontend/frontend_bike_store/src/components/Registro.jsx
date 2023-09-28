@@ -2,12 +2,27 @@ import '../assets/css/Registro.css'
 import logoi from "../assets/img/image-logo.png.png"
 import axios from 'axios';
 import React, { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export const Registro = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const mensajeNoRegistrado = () => {
+    toast.error('Error al registrar usuario', {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      });
+  }
 
   const enviar = async (event) => {
     event.preventDefault();
@@ -23,9 +38,8 @@ export const Registro = () => {
         location.href = './sesion'
       }
 
-      console.log(response.data); // Muestra la respuesta del servidor
     } catch (error) {
-      console.error('Error al registrar usuario', error);
+      mensajeNoRegistrado()
     }
   };
   return (
@@ -60,6 +74,7 @@ export const Registro = () => {
           <img className='logo-google' src="./src/assets/img/google-logo.png" />
         </button>
       </div>
+      <ToastContainer />
     </div>
   )
 }

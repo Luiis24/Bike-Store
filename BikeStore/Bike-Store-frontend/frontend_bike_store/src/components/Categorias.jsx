@@ -4,16 +4,25 @@ import { useFilters } from '../redux/filters';
 import { FiltrosCategoria } from './FiltrosCategoria.jsx';
 import { Link } from 'react-router-dom';
 import { useCarritoContext } from '../redux/carritoContext';
+import ReactLoading from 'react-loading';
+import { useLoading } from '../redux/loading';
 
 export const Categorias = () => {
     const [products, setProducts] = useState([]);
+    const {isLoading, setIsLoading} = useLoading()
   useEffect(() => {
+    setIsLoading(true)
     axios.get('http://localhost:3000/products')
       .then(datos => {
-        setProducts(datos.data);
+        if(datos.data){
+          setProducts(datos.data);
+          setIsLoading(false)
+        }
+        
       })
       .catch(error => {
         console.error('Error al obtener los datos:', error);
+        setIsLoading(false)
       });
   }, []);
 
@@ -37,6 +46,7 @@ export const Categorias = () => {
 
   return (
     <div>
+      { isLoading ? <ReactLoading type="spin" color="#000" className='loading'/> : ''}
         <div className='sectionCards'>
         <FiltrosCategoria></FiltrosCategoria>
       <div className='tarjetas-bicicletas'>

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import '../assets/css/compra.css'
+import '../assets/css/compraRealizada.css'
 import compra from '../assets/img/checkCompra.png'
 
 export const CompraRealizada = () => {

@@ -1,22 +1,27 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios';
-import '../assets/css/ventas.css'
+import { useAuth } from '../redux/store.jsx';
+import '../assets/css/compras.css'
 import ReactLoading from 'react-loading';
 import { useLoading } from '../redux/loading';
 
-export const Ventas = () => {
-    const [ventas, setVentas] = useState([]);
-    const {isLoading, setIsLoading} = useLoading()
-    
+export const Compras = () => {
+  const [ventas, setVentas] = useState([]);
+  const { user } = useAuth()
+  const {isLoading, setIsLoading} = useLoading()
+
+  if (!user) {
+    return <div>Ingresa tu usuario</div>
+  }
+
   const getVentas = async () => {
     setIsLoading(true)
-        axios.get('http://localhost:3000/ventas')
+    axios.get('http://localhost:3000/ventas')
       .then(datos => {
-          if(datos.data){
-            setVentas(datos.data)
-            setIsLoading(false)
-          }
-        console.log(datos.data)
+        if(datos.data){
+          setVentas(datos.data);
+          setIsLoading(false)
+        }
       })
       .catch(error => {
         console.error('Error al obtener los datos:', error);
@@ -28,48 +33,43 @@ export const Ventas = () => {
     getVentas()
   }, []);
 
+  const comprasDeUsuario = ventas.filter((venta) => venta.cliente == user.name)
+
   return (
-    <div className='containerVentas'>
+    <div className='compras-Usuario'>
       { isLoading ? <ReactLoading type="spin" color="#000" className='loading'/> : ''}
-      
-      
-        <h2>Ventas:</h2>
-      {ventas[0] ? 
-      <div className="container-tabla-ventas">
+      <h2>Compras de {user.name}</h2>
+      {comprasDeUsuario[0] ? 
+      <div className="container-tabla-compras">
       <table className='tabla-compras' border="0">
       <tr className='headTC'>
-        <th>ID</th>
         <th>Producto(s)</th>
         <th>cantidad</th>
         <th>Cantidad Total</th>
         <th>Precio</th>
-        <th>Cliente</th>
         <th>Fecha</th>
       </tr> 
 
-      {ventas.map(venta => (
-            <tr className='bodyTC' id={venta.idVenta}>
-              <td>{venta.idVenta}</td>
+      {comprasDeUsuario.map(compra => (
+            <tr className='bodyTC' id={compra.idVenta}>
               <td className='productosTC'>
-                {venta.productos.map(producto => (
+                {compra.productos.map(producto => (
                 <a href={`/detalles/${producto}`} >{producto}</a>
                 ))}
               </td>
               <td className='cantidadTC'>
-                {venta.cantidad.map(cantidad => (
+                {compra.cantidad.map(cantidad => (
                 <p>{cantidad}</p>
                 ))}
               </td>
-              <td>{venta.cantidaProductos}</td>
-              <td>${venta.total.toLocaleString('es-ES')}</td>
-              <td>{venta.cliente}</td>
-              <td>{venta.date}</td>
+              <td>{compra.cantidaProductos}</td>
+              <td>${compra.total.toLocaleString('es-ES')}</td>
+              <td>{compra.date}</td>
             </tr>
           
       ))} </table></div> : <div className='carrito-vacio'>No hay compras</div>}
+
+
     </div>
   )
 }
-
-
-  

@@ -14,6 +14,7 @@ import { Contacto } from './components/Contacto'
 import {Filtros} from './components/Filtros'
 import { Categorias } from './components/Categorias'
 import { Ventas } from './components/Ventas'
+import { Compras } from './components/Compras'
 
 const router = createBrowserRouter ([
   {
@@ -66,6 +67,11 @@ const router = createBrowserRouter ([
   {
     path:"/ventas",
     element:<><Navbar/><Ventas/></>
+  },
+
+  {
+    path:"/compras",
+    element:<><Navbar/><Compras/></>
   }
 
 

@@ -7,14 +7,45 @@ import { useCarritoContext } from '../redux/carritoContext.jsx'
 import { Link } from 'react-router-dom'
 import basura from '../assets/img/basura.png'
 import {useAuth} from '../redux/store'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const Carrito = () => {
   const { user } = useAuth();
   const { cart, addCart, removeCart, carritoInfo, cantidadProductos, subtractCart } = useCarritoContext()
   const total = carritoInfo + 50000;
+
+  const mensaje = () => {
+    toast.info('ingresa tu usuario', {
+      position: "top-right",
+      autoClose: 1500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      });
+      setTimeout(function(){location.href = "/sesion"}, 1500)
+  }
+
+  const mensajeAgregarProducto = (product) => {
+    if(product.stock <= product.cantidad){
+      toast.error('Producto agotado', {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        })
+    }}
   
   return (
     <div>
+      <ToastContainer />
       <div className="containerCarrito">
         <div className="logoNegroCarrito">
           <Link to="/home"><img src={logo} className='logo_'></img></Link>
@@ -41,7 +72,8 @@ export const Carrito = () => {
                     <div className="contador">
                         <button onClick={() => subtractCart(product)}>-</button>
                         <h4>{product.cantidad}</h4>
-                        <button onClick={() => addCart(product)}>+</button>
+                        <button onClick={() => {addCart(product); 
+                          mensajeAgregarProducto(product)}}>+</button>
                     </div>
                 </div>
                 <div className="basuraContainer"><button className='basuraResponsive' onClick={() => removeCart(product)}><img src={basura} /></button></div>
@@ -72,8 +104,7 @@ export const Carrito = () => {
               <button className="seguirCompra" onClick={() => {
                   
                   if (!user) {
-                    alert('ingresa tu usuario o registrate')
-                    return location.href = "/sesion"
+                    mensaje()
                   } else {
                     document.getElementById("modal-formulario").style.top = "0"
                   }
@@ -94,4 +125,3 @@ export const Carrito = () => {
 function vcar(vcar) {
   return vcar.toLocaleString('es-ES');
 }
-

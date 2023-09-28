@@ -1,0 +1,43 @@
+.compras-Usuario {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.compras-Usuario h2 {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.container-tabla-compras {
+    overflow-x: auto;
+}
+
+.tabla-compras {
+    width: 100%;
+}
+
+.headTC {
+    background-color: rgb(194, 194, 194);
+}
+
+.headTC th {
+    padding: 8px;
+    font-size: medium;
+}
+
+.bodyTC {
+    background-color: #efefef;
+}
+
+.bodyTC td {
+    padding: 5px;
+    text-align: center;
+}
+
+.productosTC {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+

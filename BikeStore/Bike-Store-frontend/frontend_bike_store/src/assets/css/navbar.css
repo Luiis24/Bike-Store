@@ -3,6 +3,11 @@
     padding: 0;
 }
 
+.loading {
+    position: fixed;
+    right: 47%;
+}
+
 .headerNavbar {
     height: 80px;
 }

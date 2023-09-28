@@ -1,17 +1,21 @@
 
 .containerVentas {
     margin-top: 50px;
-    margin-left: 10%;
-    margin-right: 10%;
-    width: 80%;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     gap: 40px;
 }
 
+.container-tabla-ventas {
+    overflow-x: auto;
+}
+
 .venta {
+    display: none;
     padding: 20px;
-    display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 50px;
@@ -50,7 +54,12 @@
         margin-left: 5%;
         margin-right: 5%;
     }
+
+    .tabla-ventas {
+        display: none;
+    }
     .venta {
+        display: flex;
         flex-direction: column;
         padding: 15px;
         gap: 10px;

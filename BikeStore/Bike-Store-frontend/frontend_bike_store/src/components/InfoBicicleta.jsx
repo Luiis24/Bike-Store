@@ -5,6 +5,8 @@ import { Link, useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import ReactImageZoom from "react-image-zoom";
 import { useCarritoContext } from '../redux/carritoContext';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const InfoBicicleta = () => {
   const { idproducto } = useParams();
@@ -23,6 +25,32 @@ export const InfoBicicleta = () => {
 
   if (!product) {
     return <div className="producto-no">Producto No Encontrado</div>;
+  }
+
+  const mensajeAgregarProducto = () => {
+    if(product.stock < 1){
+      toast.error('Producto agotado', {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        })
+    } else {
+    toast.success('producto Agregado', {
+      position: "top-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      });
+    }
   }
 
   // Carrito:
@@ -83,7 +111,8 @@ export const InfoBicicleta = () => {
                 </Link>
                 <button
                   className="btn-carrito"
-                  onClick={() => addCart(product)}
+                  onClick={() => {addCart(product);
+                  mensajeAgregarProducto()}}
                 >
                   Añadir Al carrito
                 </button>
@@ -97,6 +126,7 @@ export const InfoBicicleta = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

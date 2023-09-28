@@ -5,6 +5,8 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { useAuth } from '../redux/store.jsx';
 import { useAdmin } from '../redux/admin';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const Sesión = () => {
   const { user, setUser } = useAuth();
@@ -17,6 +19,32 @@ export const Sesión = () => {
     baseURL: 'http://localhost:3000/login',
     withCredentials: true
   });
+
+  const mensajeIngreso = () => {
+    toast.success('usuario Ingresado', {
+      position: "top-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      });
+  }
+
+  const mensajeNoIngreso = () => {
+    toast.error('Usuario no registrado', {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      });
+  }
   
   
   
@@ -41,14 +69,14 @@ export const Sesión = () => {
       }
 
       if(response) {
-        alert('usuario ingresado')
-        userRegister()
+        mensajeIngreso()
+        setTimeout(userRegister, 1000)
       }
 
       console.log(response); 
     } catch (error) {
       if(error){
-        alert('Usuario no registrado')
+        mensajeNoIngreso()
       }
       console.error('Error al iniciar sesión', error);
     }
@@ -94,6 +122,7 @@ export const Sesión = () => {
           <img className='logo-google' src="./src/assets/img/google-logo.png" alt="Google Logo" />
         </button>
       </div>
+      <ToastContainer />
     </div>
   )
 }
