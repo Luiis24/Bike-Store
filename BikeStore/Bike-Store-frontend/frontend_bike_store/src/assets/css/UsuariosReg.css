@@ -1,0 +1,57 @@
+table {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    ;
+    font-size: 15px;
+    margin: 45px;
+    width: 980px;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+th {
+    font-size: 20px;
+    font-weight: normal;
+    padding: 8px;
+    background: #cfcfcfcc;
+    border-top: 4px solid #c7c7c7;
+    border-bottom: 1px solid #fff;
+    color: rgb(0, 0, 0);
+}
+
+td {
+    padding: 8px;
+    background: #e6e6e6;
+    border-bottom: 1px solid #fff;
+    color: rgb(0, 0, 0);
+    border-top: 1px solid transparent;
+}
+
+tr:hover td {
+    background: #aca5a5;
+    color: rgb(0, 0, 0);
+}
+
+
+.contador-usuarios {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10%;
+    margin-bottom: 2%;
+    margin-top: 2%;
+
+}
+
+.tabla-usuarios {
+    display: flex;
+    justify-content: center;
+
+}
+
+.usuario {
+    height: 1%;
+    background-color: rgb(219, 219, 219);
+    border-radius: 15px;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
