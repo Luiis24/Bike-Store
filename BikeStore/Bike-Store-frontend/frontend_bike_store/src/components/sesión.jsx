@@ -7,6 +7,7 @@ import { useAuth } from '../redux/store.jsx';
 import { useAdmin } from '../redux/admin';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Link } from 'react-router-dom';
 
 export const Sesión = () => {
   const { user, setUser } = useAuth();
@@ -85,6 +86,8 @@ export const Sesión = () => {
 
   return (
     <div className='sesion'>
+         <div className='cerrar'>  <Link to="/home">
+      ↩ </Link>  </div>
       <div className='inicioSesion'>
         <div className='logoi'>
           <img src={logoi} alt="Logo" />

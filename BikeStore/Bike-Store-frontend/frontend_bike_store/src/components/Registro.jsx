@@ -4,6 +4,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Link } from 'react-router-dom';
 
 
 export const Registro = () => {
@@ -44,6 +45,8 @@ export const Registro = () => {
   };
   return (
     <div className='registro'>
+         <div className='cerrar'>  <Link to="/home">
+      ↩ </Link>  </div>
       <div className='inicio'>
         <div className='logoi'>
           <img src={logoi} />

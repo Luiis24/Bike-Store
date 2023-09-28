@@ -9,10 +9,12 @@ import 'react-toastify/dist/ReactToastify.css';
 
 // Catalogo :
 
-export const Info_productos = () => {
+export const Info_productos = ({ onOrdenChange }) => {
   const [products, setProducts] = useState([]);
-  const [pagina, setPagina] = useState(1)
-  const [porPagina, setPorPagina] = useState(8)
+  const [pagina, setPagina] = useState(1);
+  const [porPagina, setPorPagina] = useState(8);
+  const [ordenAscendente, setOrdenAscendente] = useState(true);
+  
 
   useEffect(() => {
     axios.get('http://localhost:3000/products')
@@ -91,7 +93,10 @@ const {addCart} = useCarritoContext()
  if (!products) {
     return <div className='catalogo-vacio'>Catalogo Vacio</div>;
   }
-
+  const toggleOrden = () => {
+    setOrdenAscendente(!ordenAscendente);
+    onOrdenChange(ordenAscendente);
+  };
   return (
     <div className='sectionCards'>
       <div className='busqueda'>

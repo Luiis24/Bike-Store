@@ -28,7 +28,8 @@ export const Navbar = () => {
                 <li className="Categorias"><a href="/categorias">Categorias</a></li>
                 {user ? <li><a href="/compras" >Compras</a></li> : ''}
                 {admin ? <><li><a href="/Agregar">Agregar</a></li> 
-                <li><a href='/ventas'>Ventas</a></li></>
+                <li><a href='/ventas'>Ventas</a></li>
+                <li><a href='/UsuariosReg'>Usuarios</a></li></>
                 : null}
 
                 <li>{
