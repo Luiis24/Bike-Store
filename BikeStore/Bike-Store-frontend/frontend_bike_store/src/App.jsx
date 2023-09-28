@@ -1,4 +1,3 @@
-
 import { Info_productos } from './components/Info_productos'
 import { Paginador } from './components/Paginador'
 import {Buscador} from './components/Buscador'
@@ -15,6 +14,7 @@ import {Filtros} from './components/Filtros'
 import { Categorias } from './components/Categorias'
 import { Ventas } from './components/Ventas'
 import { Compras } from './components/Compras'
+import { UsuariosReg } from './components/UsuariosReg'
 
 const router = createBrowserRouter ([
   {
@@ -25,6 +25,15 @@ const router = createBrowserRouter ([
     <Filtros></Filtros>
     <Info_productos/>
     <Footer2/>
+    </>
+  },
+
+  {
+    path: "/UsuariosReg",
+    element: <>
+    <Navbar/>
+    <UsuariosReg/>
+  
     </>
   },
 
