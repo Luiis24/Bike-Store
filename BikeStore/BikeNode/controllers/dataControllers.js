@@ -116,21 +116,6 @@ const getProducts = (req, res)=> {
             );
         });
     };
-    
-
-    // const detalles = async(req, res) =>{
-
-    //     const id = parseInt(req.params.id);
-
-    //     const traer = await pool.query('SELECT * FROM productos WHERE idproducto = $1', [id]);
-
-    //     if(traer){
-            
-    //         res.status(200).json(JSON.stringify(traer.rows[0]))
-    //     }else{
-    //         res.status(404).json({ error: 'Product not found'})
-    //     }
-    // }
    
     const getProductById = (req, res) => {
         const idproducto = req.params.idproducto;
@@ -169,10 +154,6 @@ const getProducts = (req, res)=> {
 
     const compra = (req, res) => {
         const {productos, cantidadProductos, total, date, cliente, cantidad} = req.body;
-
-        // if(!productos || !cantidadProductos || !total || !fecha){
-        //     return res.status(400).json({ error: 'Falta informacion requerida' });
-        // }
 
         pool.query('INSERT INTO public."Venta" (productos, "cantidaProductos", total, date, cliente, cantidad) values ($1, $2, $3, $4, $5, $6)', [productos, cantidadProductos, total, date, cliente, cantidad], (error) => {
             if(error){
