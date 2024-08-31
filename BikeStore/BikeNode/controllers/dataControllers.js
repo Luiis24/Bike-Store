@@ -3,7 +3,6 @@ const { CONFIG_BD } = require('../config/db');
 const e = require('express');
 const bcrypt = require('bcrypt');
 
-
 const pool = new Pool(CONFIG_BD)
 
 const getProducts = (req, res)=> {
@@ -17,7 +16,6 @@ const getProducts = (req, res)=> {
         });
     };
 
-
     const usuarios = (req, res)=> {
         pool.query('SELECT * FROM usuarios', (error, result) => {
             if (error){
@@ -28,7 +26,6 @@ const getProducts = (req, res)=> {
             }
             });
         };
-
 
     const registerUser = (req, res)=>{
         console.log (req.body)
@@ -104,12 +101,7 @@ const getProducts = (req, res)=> {
             })
         });
     };
-   
-
-   
-
-
-  
+      
   module.exports = {
     getProducts,
     registerUser,
@@ -117,5 +109,4 @@ const getProducts = (req, res)=> {
     loginUser,
     registerProdutcs
   };
-  
-    
+     
