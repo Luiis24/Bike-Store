@@ -55,29 +55,6 @@ const getProducts = (req, res)=> {
             })
         });
     };
-    // const loginUser = async (req, res) => {
-    //     const { email, password } = req.body;
-    
-    //     if (!email || !password) {
-    //         return res.status(400).json({ error: 'Falta informacion requerida' });
-    //     }
-    //     try {
-    //         const result = await pool.query('SELECT * FROM usuarios WHERE email = $1', [email]);
-    //         if (result.rows.length === 0) {
-    //             return res.status(401).json({ error: 'Usuario no encontrado' });
-    //         }
-    //         const user = result.rows[0];
-    
-    //         const passwordMatch = await bcrypt.compare(password, user.password);
-    //         if (!passwordMatch) {
-    //             return res.status(401).json({ error: 'Contraseña incorrecta' });
-    //         }
-    //         res.status(200).json({ message: 'Inicio de sesión exitoso' });
-    //     } catch (error) {
-    //         console.error('Error al consultar la base de datos', error);
-    //         return res.status(500).json({ error: 'Error al iniciar sesión' });
-    //     }
-    // };
     
     const loginUser = async (req, res) => {
         const { email, password } = req.body;
@@ -118,9 +95,6 @@ const getProducts = (req, res)=> {
                 console.error('Error al consultar la base de datos', error);
                 return res.status(500).json ({error: 'Error al registrar el Producto', error});
             }
-            // if (result.rows.length > 0){
-            //     return res.status(409).json({ error: 'El Producto ya existe'});
-            // }
             pool.query('INSERT INTO productos (nombre, precio, descripcion, tipo, imagen) VALUES ($1, $2, $3, $4, $5)', [nombre,precio,descripcion,tipo,imagen],(error)=>{
                 if (error){
                     console.error('Error al insertar el ususario en la base de datos', error);
